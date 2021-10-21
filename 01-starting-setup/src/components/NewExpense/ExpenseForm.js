@@ -33,32 +33,12 @@ const ExpenseForm = (props) => {
         setEnteredTitle('');
         setEnteredAmount('');
         setEnteredDate('');
+        closeNewExpenseForm();
     };
 
-    // Single state (another way that can be done)
-    // const [userInput, setUserInput] = useState({
-    //     enteredTitle: '',
-    //     enteredAmount: '',
-    //     enteredDate: ''
-    // });
-
-    // const titleChangeHandler = (event) => {
-    //     setUserInput((prevState) => {
-    //         return { ...userInput, enteredTitle: event.target.value }
-    //     });
-    // };
-
-    // const amountChangeHandler = (event) => {
-    //     setUserInput((prevState) => {
-    //         return { ...userInput, enteredAmount: event.target.value }
-    //     });
-    // };
-
-    // const dateChangeHandler = (event) => {
-    //     setUserInput((prevState) => {
-    //         return { ...userInput, enteredDate: event.target.value }
-    //     });
-    // };
+    const closeNewExpenseForm = () => {
+        props.onCloseNewExpenseForm(false);
+    };
 
     return (
         <form onSubmit={submitHandler}>
@@ -77,10 +57,11 @@ const ExpenseForm = (props) => {
                 </div>
             </div>
             <div className="new-expense__actions">
+                <button type="button" onClick={closeNewExpenseForm}>Cancel</button>
                 <button type="submit">Add Expense</button>
             </div>
         </form>
     );
 }
 
-export default ExpenseForm
+export default ExpenseForm;
