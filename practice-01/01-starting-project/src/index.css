@@ -8,19 +8,5 @@ html {
 
 body {
   margin: 0;
-  background-color: black;
-}
-
-.card {
-  background-color: white;
-  width: 40%;
-  border-radius: 5px;
-  text-align: left;
-  margin-top: 20px;
-  padding: 15px;
-}
-
-.card-item {
-  padding-top: 3px;
-  padding-bottom: 3px;
+  background-color: #1f1f1f;
 }
